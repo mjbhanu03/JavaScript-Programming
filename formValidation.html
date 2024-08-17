@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Practice</title>
+</head>
+<body>
+    
+    <form id="myForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <br>
+        <br>
+        <label for="name" >Password</label>
+        <input type="password" id="password" placeholder="Enter Your Password">
+        <br>
+        <br>
+        <input type="submit" value="Submit" onmousemove="myFunction(event)">
+    </form>
+
+    <p id="Name"></p>
+    <p id="Password"></p>
+</body>
+<script>
+    
+    function myFunction(event)
+    {
+        let nameValue = document.getElementById('name').value
+        let name = document.getElementById('Name')
+        let passwordValue = document.getElementById('password').value
+        let password = document.getElementById('Password')
+        let form = document.getElementById('form')
+        event.preventDefault();
+        name.textContent = nameValue  
+        password.textContent = passwordValue  
+        // console.log(nameValue);
+        // console.log(passwordValue);
+    }
+</script>
+</html>

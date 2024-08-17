@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Practice</title>
+</head>
+<script>
+    // mm-dd-yyyy, mm/dd/yyyy, or dd-mm-yyyy, dd/mm/yyyy
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    if(dd < 10){
+        dd = '0' + dd;
+    }
+    if(mm < 10){
+        mm = '0' + mm;
+    }
+
+    today = mm + '-' + dd + '-' + yyyy;
+    document.write('Format 1 (mm-dd-yyyy): ' + today);
+    document.write('<br>');
+    today = dd + '/' + mm + '/' + yyyy;
+    document.write('Format 2 (dd/mm/yyyy): ' + today);
+
+</script>
+<body>
+    
+</body>
+</html>

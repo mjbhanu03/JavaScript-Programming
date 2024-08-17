@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice JS</title>
+</head>
+
+<body>
+
+    
+    <!-- Query Selector  -->
+    <!-- <div class="prac">
+        <p>Mange</p>
+        <p>Jay</p>
+        <p>Ashokbhai</p>
+        <p>Bhanushali</p>
+    </div> -->
+
+</body>
+    <script>
+        // Query Selector 
+        // let h1 = document.querySelector(".prac");
+        // console.log(h1);
+    
+        let createUunorderList = document.createElement('ul');
+        document.body.appendChild(createUunorderList)
+        createUunorderList.style.background = 'black';
+        createUunorderList.style.color = 'yellow';
+    
+        let inUlLitag = document.createElement('li')
+        inUlLitag.textContent = "It's Magic"
+        createUunorderList.appendChild(inUlLitag)
+    
+        let anotherLitag = document.createElement('li')
+        anotherLitag.textContent = "Is it good"
+        createUunorderList.appendChild(anotherLitag)
+    </script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Of Event Listner</title>
+</head>
+<body>
+    <button onmousemove="myFunction(event)" onmouseout="resetText()" id="btn">Click Me</button>
+</body>
+<script>
+    // let button = document.getElementsByTagName('button')[0];
+
+    function myFunction(event){
+        document.getElementById('btn').textContent = "Type of Event: " + event.type;
+        console.log("Target of Event: " + event.target);
+        console.log("hello");
+    }
+    function resetText()
+    {
+        document.getElementById('btn').textContent = "Click Me";
+    }
+</script>
+</html>

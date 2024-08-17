@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe in Js</title>
+    <style>
+
+
+        button {
+            margin: 2px;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: 1px solid #000;
+            font-size: 24px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 50px;
+            cursor: pointer;
+        }
+    /* 
+            .afterContent {
+                background-color: red;
+            } */
+    
+    </style>
+</head>
+
+<body>
+    <div class="row1">
+        <button id="1" onclick="myFunction(this)" style="background-color: transparent;  padding: 10px;"></button>
+        <button id="2" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <button id="3" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <br>
+        <button id="4" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <button id="5" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <button id="6" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <br>
+        <button id="7" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <button id="8" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <button id="9" onclick="myFunction(this)" style="background-color: transparent; padding: 10px;"></button>
+        <p id="print"></p>
+    </div>
+</body>
+<script>
+    let count = 1;
+
+
+    function myFunction(button) {
+
+        if (button.innerHTML === '') {
+
+
+            if (count % 2 === 0) {
+                button.innerHTML = 'O';
+            }
+            else {
+                button.innerHTML = 'X';
+            }
+    
+            count++;
+            checkWinner()
+        }
+    
+    }
+    
+    
+    function checkWinner() {
+        let ctn1 = document.getElementById('1').innerHTML
+        let ctn2 = document.getElementById('2').innerHTML
+        let ctn3 = document.getElementById('3').innerHTML
+        let ctn4 = document.getElementById('4').innerHTML
+        let ctn5 = document.getElementById('5').innerHTML
+        let ctn6 = document.getElementById('6').innerHTML
+        let ctn7 = document.getElementById('7').innerHTML
+        let ctn8 = document.getElementById('8').innerHTML
+        let ctn9 = document.getElementById('9').innerHTML
+        let winner = document.getElementById('print')
+        if (
+            ctn1 === 'X' && ctn2 === 'X' && ctn3 === "X" ||
+            ctn1 === 'X' && ctn5 === 'X' && ctn9 === 'X' ||
+            ctn2 === 'X' && ctn5 === 'X' && ctn8 === 'X' ||
+            ctn3 === 'X' && ctn6 === 'X' && ctn9 === 'X' ||
+            ctn3 === 'X' && ctn5 === 'X' && ctn7 === 'X' ||
+            ctn4 === 'X' && ctn5 === 'X' && ctn6 === 'X'
+
+        ) {
+            document.querySelectorAll('button').forEach(button => button.disabled = true);
+            winner.textContent = 'X is Winner'
+        }
+        else if (
+            ctn1 === 'O' && ctn2 === 'O' && ctn3 === "O" ||
+            ctn1 === 'O' && ctn5 === 'O' && ctn9 === 'O' ||
+            ctn2 === 'O' && ctn5 === 'O' && ctn8 === 'O' ||
+            ctn3 === 'O' && ctn6 === 'O' && ctn9 === 'O' ||
+            ctn3 === 'O' && ctn5 === 'O' && ctn7 === 'O' ||
+            ctn4 === 'O' && ctn5 === 'O' && ctn6 === 'O'
+
+        ) {
+            document.querySelectorAll('button').forEach(button => button.disabled = true);
+            winner.textContent = 'O is Winner'
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Registration</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            padding-left: 2px;
+            padding-right: 2px;
+            border: none;
+            color: #00796b;
+            font-size: 18px;
+        }
+
+        .error {
+            border: 2px solid red !important;
+        }
+    </style>
+    <!-- <script>
+        function validate() {
+            let user = document.getElementById("c").value;
+            let user2 = document.getElementById("c");
+
+            
+            let re = /^[7-9][0-9]{9}$/;
+            if (re.test(user)) {
+                alert("done");
+                return true;
+            } else {
+                user2.classList.add("error");
+                return false;
+            }
+        }
+
+        window.onclick = function (event) {
+            if (event.target.matches('#c')) {
+                document.getElementById("c").classList.remove("error");
+                }
+                }
+                
+            </script> -->
+        </head>
+        
+        <body>
+    <div class="container">
+        <h1>Email Registration</h1>
+        <form onsubmit="return validate()">
+            <fieldset>
+                <legend>Registration Form</legend>
+                <input type="text" placeholder="First Name" maxlength="10">
+                <input type="text" placeholder="Last Name" maxlength="10">
+                <input type="text" placeholder="username@gmail.com">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <input type="text" placeholder="Contact" id="c">
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                </select>
+                <input type="submit" value="Create">
+            </fieldset>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

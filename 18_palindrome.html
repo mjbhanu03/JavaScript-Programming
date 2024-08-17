@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome In JS</title>
+</head>
+<body>
+    <h2>Palindrome in JavaScript</h2>
+
+    <script>
+        let string = prompt("Enter Value:");
+        let stringToArray = string.split('');
+        let reverseArray = stringToArray.reverse();
+        let joinReverseArray = reverseArray.join('');
+
+        if(joinReverseArray == string)
+    {
+        document.write(`Yes, ${string} is a palindrome number.`);
+    }
+    else 
+    {
+        document.write(`No, ${string} is not a palindrome number.`);
+    }
+</script>
+</body>
+</html>

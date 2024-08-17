@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        // Prac 1
+        // function myFunction(){
+        //      document.getElementById("text").innerHTML = "It's Magic";
+        // } 
+
+        // Prac 2
+        let arr = [12, 22, 23, 45, 56, 78];
+
+        // forEach
+        document.writeln('<b>forEach</b>')
+        arr.forEach((value) => {
+            document.writeln("<br>" + value);   
+        })
+        
+        document.writeln('<br>')
+        
+        // Map Function
+        document.writeln('<b>map function</b>')
+        document.writeln('= Map function makes new array so if we want to edit the original array its possible. where forEach only prints the array.')
+        
+        arr.map((value, key, array) => {
+            document.writeln("<br>" + 'Original Value: ' +value+" ");   
+            document.writeln('<br>')
+            document.writeln("Edited Value: " + (value+1));   
+            document.writeln('<br>')
+            document.writeln("Key: " + (key));   
+            document.writeln('<br>')
+            document.writeln("Array: " + (array));   
+            document.writeln('<br>')
+            
+        })
+        
+        document.writeln('<br>')
+        // for in Loop
+        document.writeln('<b>For in loop </b> = For in loop will print keys of array.<br>')
+        for(let key in arr)
+        {
+            document.writeln(key);
+        }
+        
+        document.writeln('<br>')
+        // for of Loop
+        document.writeln('<b>For of loop </b>= For of loop will print values of array.<br>')
+        for(let value of arr)
+        {
+            document.writeln(value);
+        }
+        
+        document.writeln('<br>')
+        document.writeln('<b>Filter function</b> = first filter the values like check the condition that which values has to give. And creates new array. <br>')
+        // filter function
+        let filterArray = arr.filter((value) => {
+            return value > 50
+        })
+        document.writeln(filterArray);
+      
+        // reduce function
+        document.writeln('<br>')
+        document.writeln('<b>Reduce function</b> = It reduce the lines. <br>')
+    let reduceArray = arr.reduce((value1, value2) => {
+         return value1 + value2
+    })
+    document.writeln(reduceArray);
+    </script>
+<body>
+    <!-- Prac 1 -->
+    <!-- <button onclick="myFunction()">
+        Click Me!
+    </button>
+    <p id="text">
+        Aap Muje Jante Ho!
+    </p> -->
+
+    <!-- Prac 2 -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- 
+    <button id="toggleButton">Show Text</button>
+    <p id="toggleText">This is the text that will be toggled on and off.</p>
+
+    <script>
+        let toggleButton = document.getElementById('toggleButton');
+        let toggleText = document.getElementById('toggleText');
+
+        toggleButton.addEventListener('click', function() {
+            if (toggleText.style.display === "none") {
+                toggleText.style.display = "block";
+                toggleButton.textContent = "Hide Text";
+            } else {
+                toggleText.style.display = "none";
+                toggleButton.textContent = "Show Text";
+            }
+        });
+    </script> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Practice</title>
+    <style>
+        .styling
+        {
+            color:rgb(20, 153, 153);
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 10px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <label for="" id="value">Click</label>
+    <br>
+    <br>
+    <input type="button" id="btn" value="Click Me" style="background-color: black; color: white; width: 100px; height: 50px;">
+    
+</body>
+<script>
+    let btn = document.getElementById("btn");
+    let value = document.getElementById("value");
+    
+    
+    btn.addEventListener('click', () =>{
+        // this will work for when css is not there
+        // if(value.innerHTML === "Click")
+        // {
+        //     value.innerHTML = 'Clicked'
+        // }
+        // else
+        // {
+        //     value.innerHTML = 'Click'
+        // }
+
+        value.classList.toggle('styling')
+    })
+
+
+</script>
+</html>

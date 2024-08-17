@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP Message Program</title>
+</head>
+<script>
+    function myFunction()
+    {
+        let txt;
+        if(confirm('Please press a button'))
+    {
+        txt = "You pressed Button";
+    }
+    else{
+        txt = "You pressed cancel button";
+    }
+    document.getElementById("Test Confirm Box").innerHTML = txt;
+    }
+</script>
+<body>
+    <h2>JavaScript Confirm Box</h2>
+    <button onclick="myFunction()">Try it!</button>
+
+    <p id="Test Confirm Box"></p>
+</body>
+</html>

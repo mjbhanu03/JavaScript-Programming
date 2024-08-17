@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+function genAndFindMax(n, min, max) {
+    let maxNum = Number.MIN_SAFE_INTEGER; 
+    for (let i = 0; i < n; i++) {
+        let randNum = Math.floor(Math.random() * (max - min + 1)) + min; 
+        maxNum = Math.max(maxNum, randNum); 
+    }
+    for (let i = 0; i < n; i++) {
+        document.writeln(randNum);
+    }
+    return maxNum;
+}
+
+const n = 10; 
+const min = 1; 
+const max = 100; 
+
+document.write("Max Number:", genAndFindMax(n, min, max));
+
+</script>
+<body>
+    
+</body>
+</html>
