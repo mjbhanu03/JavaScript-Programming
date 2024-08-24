@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+
+</body>
+<script>
+let forCallback = (arg1, arg2, callback) =>{
+    setTimeout(() => {
+        const answer = arg1 + arg2
+
+    if(answer % 2 !== 0)
+    {
+        callback(null, answer)
+    }
+    else
+    {
+        callback(new Error('Result is not odd'), null)
+    }
+    }, 2000)
+}
+let forPromise = (num1, num2) => {
+    return new Promise((resolve, reject) => {
+        forCallback(num1, num2, (error, result) => {
+        if(error)
+        {
+            reject(error)
+        }
+        else
+        {
+            resolve(result)
+        }
+        })
+
+    })
+} 
+
+forPromise(2, 4).then(result => {
+    console.log('Result:', result);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+</script>
+</html>
