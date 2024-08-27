@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Testing</title>
+</head>
+<body>
+</body>
+<p id="one"></p>
+<p id="two"></p>
+<p id="four"></p>
+<p id="three"></p>
+    <script>
+        // let one = document.getElementById('one')
+        // let two = document.getElementById('two')
+        // let three = document.getElementById('three')
+ 
+        // async function func()  {
+        //     one.textContent = 'Hi There i am running before async.'
+        //     await setTimeout(() => 
+        //     two.textContent = "Oh,Hi i am running in async",2000) 
+        //     await setTimeout(() => 
+        //     four.textContent = "Oh,Hi i am running in async but second",4000) 
+        //     three.textContent =  "Hi There i am running after async."
+        // }
+        // func()
+
+        // let createPromise = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log('Oh, i am running')
+        //         resolve(createPromise.status)
+        //     },1000)
+        // })
+        // .then((result) =>
+        // {
+        //     console.log(result)
+        // })
+        // .catch((error) =>
+        // {
+        //     console.log('Ah, i am not resolved')
+        // })
+
+
+        function forCallback1() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Yes, I am callback 1");
+            resolve();
+        }, 1000);
+    });
+}
+
+function forCallback2() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Yes, I am callback 2");
+            resolve();
+        }, 3000);
+    });
+}
+
+function forCallback3() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Yes, I am callback 3");
+            resolve();
+        }, 2000);
+    });
+}
+
+forCallback1()
+    .then(forCallback2)
+    .then(forCallback3)
+    .then(() => {
+        console.log("All done!");
+    });
+
+
+    </script>
+
+</html>

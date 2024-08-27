@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Automatic Request</title>
+</head>
+<body>
+</body>
+
+    <script>
+        fetchDataWithRetry(url, maxRetries){
+            return new Promise((resolve, reject) => {
+                let retries = 0
+                const fetchData = () => {
+                    fetch(url)
+                    .then(response => {
+                        if(!response.ok)
+                        {
+                            throw new Error(`HTTP error! ${response.status}`)
+                        }
+                        return response.json()
+                    })
+                    .then(data => resolve(data))
+                    .catch(error => {
+                        retries++;
+                        if(retries <= maxRetries)
+                    {
+                        console.log(`Request failed. Retrying(${retries}/${maxRetries})...`)
+                        fetchData()
+                    }else{
+                        reject(new Error(`Failed after ${maxRetries} retries. Error: ${error.message}`))
+                    }
+                    })
+                }
+                fetchData()
+            })
+        }
+        
+        const api = 'https://jsonplaceholder.typicode.com/posts'
+        console.log('URL->', api)
+        const maxRetries = 3
+
+        fetchDataWithRetry(api, maxRetries)
+        
+            .then(data => {
+                console.log('Fetched data:', data)
+            })
+            .catch(error => {
+                console.log('Error:', error.message)
+            })
+                
+    </script>
+
+
+</html>
