@@ -1,0 +1,39 @@
+<html>
+
+<body>
+</body>
+
+<script>
+    let url = [
+        'https://jsonplaceholder.typicode.com/posts/1',
+        'https://jsonplaceholder.typicode.com/posts/2',
+        'https://jsonplaceholder.typicode.com/posts/3'
+    ];
+
+    function fetchAPI(urls) {
+        const promises = urls.map((url) => {
+            return fetch(url)
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json()
+                    }
+                    else {
+                        console.log('There is some error')
+                    }
+                })
+                .then((value) => {
+                    return value
+                })
+
+        })
+
+        return Promise.all(promises)
+    }
+
+    fetchAPI(url)
+        .then((value) => {
+            console.log(value)
+        })
+</script>
+
+</html>
