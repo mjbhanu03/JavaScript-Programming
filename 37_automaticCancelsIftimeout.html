@@ -1,0 +1,48 @@
+<html>
+    <body>
+    </body>
+
+    <script>
+        let url = 'https://jsonplaceholder.typicode.com/posts/1'
+        const timedOut = 5000
+
+        
+        let fetchData = (url, timedOut) => {
+            const aborting = new AbortController()
+            const { signal } = aborting
+
+            const timedOutID = setTimeout(() => {
+                aborting.abort()
+            }, timedOut)
+
+            return fetch(url, { signal })
+            .then(response => {
+                clearTimeout(timedOutID)
+                if(!response.ok)
+                {
+                    throw new Error(`HTTP Error! Status: ${response.status}`)
+                }
+
+                return response.json()
+            })
+            .catch(error => {
+                if(error.name === 'AbortError')
+            {
+                throw new Error('Request time out')
+            }
+            else {
+                throw error;
+            }
+            })
+        }
+
+        fetchData(url, timedOut)
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
+    </script>
+</html>
