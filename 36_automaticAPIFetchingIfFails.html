@@ -1,0 +1,35 @@
+<html>
+    <body>
+    </body>
+    
+    <script>
+        let url = 'https://jsonplaceholsder.typicode.com/posts/1';
+        let trials = 3
+        function autoFetch(trials, url, tried = 0) {
+
+            fetch(url)
+            .then((response) => {
+            if(response.ok)
+            {
+                console.log('ok')
+            }
+            else 
+            {
+
+            }
+        })
+        .catch((error) => {
+            console.log(error)
+            console.log(tried)
+                if(tried < trials - 1){
+                    autoFetch(trials, url, tried+1)
+                }
+                else
+                {
+                    console.log('Sorry, Fetching is not possible')
+                }
+        })
+    }
+    autoFetch(trials, url)
+    </script>
+</html>
