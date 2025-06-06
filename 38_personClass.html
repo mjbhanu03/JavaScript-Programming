@@ -1,0 +1,49 @@
+<html>
+
+<body>
+</body>
+
+<script>
+    class Shape {
+        constructor() {
+          
+        }
+        area() {
+
+        }
+
+    }
+    class Circle extends Shape {
+        constructor(radius) {
+            super()
+            this.radius = radius
+        }
+        area() {
+            super.area()
+            console.log(3.14 * this.radius * this.radius)
+        }
+
+    }
+
+    class Triangle extends Shape {
+        constructor(base, height) {
+            super()
+            this.base = base
+            this.height = height
+        }
+        area() {
+            super.area()
+            console.log((this.height * this.base) / 2)
+        }
+    }
+
+    const areaOfCircle = new Circle(2)
+    const areaOfTriangle = new Triangle(2, 3)
+
+    areaOfCircle.area()
+    areaOfTriangle.area()
+
+
+</script>
+
+</html>
