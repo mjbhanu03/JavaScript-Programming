@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guesss the number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h2>Guess the Number</h2>
+
+      <div
+        style="
+          height: auto;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <label>Enter Number:</label>&nbsp;
+        <input type="text" class="num" />
+      </div>
+
+      <div
+        style="
+          height: auto;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <p>Last Guessed Number:</p>
+        &nbsp;
+        <p
+          class="LastgueesedNumber"
+          style="
+            height: auto;
+            width: auto;
+            color: black;
+            background-color: white;
+          "
+        >
+           
+        </p>
+      </div>
+      <div
+        style="
+          height: auto;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <p>Number of Guesses Remaining:</p>
+        &nbsp;
+        <p
+          class="numberOfGuessRemaining"
+          style="
+            height: auto;
+            width: auto;
+            color: black;
+            background-color: white;
+          "
+        >
+          10
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; margin: 1px;">
+        <input type="submit" class="sbmt" style="height: 30px; width: 150px; color:white; background-color: black;" />
+        <input type="submit" class="playagain" style="height: 30px; width: 150px; color:black; background-color: white;" value="Play Again!!!"/>
+      </div>
+        
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
