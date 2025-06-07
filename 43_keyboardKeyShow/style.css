@@ -1,0 +1,12 @@
+
+body{
+  background-color: gray;
+  align-items: center;
+  justify-content: center;
+}
+
+.key{
+  align-content: center;
+  justify-items: center;
+  height: 100vh;
+}
